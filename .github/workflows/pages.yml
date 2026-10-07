@@ -1,0 +1,59 @@
+name: Publish portfolio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3.5'
+          bundler-cache: true
+      - uses: actions/configure-pages@v5
+      - name: Record last push date
+        env:
+          PUSHED_AT: ${{ github.event.repository.pushed_at }}
+        run: |
+          if [[ "$PUSHED_AT" =~ ^[0-9]+$ ]]; then
+            push_date=$(TZ=Europe/Zurich date -d "@$PUSHED_AT" +%Y-%m-%d)
+          elif [[ -n "$PUSHED_AT" ]]; then
+            push_date=$(TZ=Europe/Zurich date -d "$PUSHED_AT" +%Y-%m-%d)
+          else
+            push_date=$(TZ=Europe/Zurich date +%Y-%m-%d)
+          fi
+          printf 'last_push_at: %s\n' "$push_date" > .config.build.yml
+      - name: Build portfolio
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --config _config.yml,.config.build.yml
+      - name: Check generated pages
+        run: ruby test/check_site.rb
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy GitHub Pages site
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,12 @@
+.DS_Store
+.bundle/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+_site/
+vendor/
+node_modules/
+playwright-report/
+test-results/
+al-folio-upgrade-report.md
+.config.build.yml

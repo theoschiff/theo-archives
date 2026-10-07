@@ -1,0 +1,43 @@
+---
+title: Research
+permalink: /research/
+intro: ML, with biology and health in mind.
+description: Théo Schifferli's research in protein engineering, retrieval, multimodal language models, reasoning and genomics.
+---
+
+<div class="research-list">
+  {% for project in site.data.research %}
+    <article class="research-entry">
+      <p class="entry-meta">{{ project.context }}</p>
+      <h2>{{ project.title }}</h2>
+      {% if project.subtitle %}<p class="entry-subtitle">{{ project.subtitle }}</p>{% endif %}
+      <p>{{ project.description }}</p>
+      {% if project.figures %}
+        <div class="research-figures" aria-label="{{ project.title }} figures">
+          {% for figure in project.figures %}
+            <figure class="research-figure">
+              <a href="{{ figure.src | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: {{ figure.alt }}">
+                <img src="{{ figure.src | relative_url }}" width="{{ figure.width }}" height="{{ figure.height }}" alt="{{ figure.alt }}" loading="lazy" decoding="async">
+              </a>
+              <figcaption>{{ figure.caption }}</figcaption>
+            </figure>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if project.supervision %}<p class="entry-people"><span>Supervised by</span> {{ project.supervision }}</p>{% endif %}
+      {% if project.recognition %}
+        <p class="entry-recognition" aria-label="Awards and recognition">
+          {% for item in project.recognition %}{% if item.tone == 'award' %}<em><strong class="recognition-award">{{ item.text }}</strong>{% if item.detail %} · {{ item.detail }}{% endif %}</em>{% elsif item.tone == 'acceptance' %}<em><strong class="recognition-acceptance">{{ item.text }}</strong></em>{% elsif item.tone == 'grade' %}<em><strong class="recognition-grade">{{ item.text }}</strong></em>{% else %}<em>{{ item.text }}</em>{% endif %}{% unless forloop.last %}{% assign next_item = project.recognition[forloop.index] %}{% unless next_item.tone == 'acceptance' %}<span class="recognition-separator" aria-hidden="true"> · </span>{% else %} {% endunless %}{% endunless %}{% endfor %}
+        </p>
+      {% endif %}
+      {% if project.links %}
+        <div class="entry-links">
+          {% for link in project.links %}<a href="{{ link.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}
+        </div>
+      {% endif %}
+      <ul class="tags" aria-label="Research topics">
+        {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+      </ul>
+    </article>
+  {% endfor %}
+</div>

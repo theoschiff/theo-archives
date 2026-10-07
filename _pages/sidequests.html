@@ -1,0 +1,30 @@
+---
+title: Sidequests
+permalink: /sidequests/
+sidequests: true
+description: A space for Théo Schifferli's personal projects, experiments and happy detours. Empty for now.
+---
+
+<section class="sidequests-intro" aria-labelledby="sidequests-title">
+  <h1 id="sidequests-title">Sidequests<span aria-hidden="true">↗</span></h1>
+  <p class="sidequests-description">Things made out of curiosity.<br>Small experiments. Happy detours.</p>
+  <span class="field-note" aria-hidden="true">no particular destination</span>
+</section>
+
+{% if site.data.sidequests.size > 0 %}
+  <div class="sidequests-grid">
+    {% for quest in site.data.sidequests %}
+      <article class="quest-card">
+        <span class="entry-meta">{{ quest.category | escape }}</span>
+        <h2>{% if quest.url %}<a href="{{ quest.url | escape }}">{{ quest.title | escape }}</a>{% else %}{{ quest.title | escape }}{% endif %}</h2>
+        <p>{{ quest.description | escape }}</p>
+      </article>
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="empty-curation">
+    <span class="empty-symbol" aria-hidden="true">✳</span>
+    <p>Nothing on the wall. Yet.</p>
+    <span>A few things are taking shape. They'll land here when they're ready.</span>
+  </div>
+{% endif %}

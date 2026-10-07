@@ -1,0 +1,106 @@
+# Main entry point for theoschifferli.ch.
+title: Théo Schifferli
+first_name: Théo
+middle_name: ""
+last_name: Schifferli
+description: research, work and sidequests
+lang: en
+url: https://theoschifferli.ch
+# A custom domain serves this project at the root, without /theo-archives.
+baseurl: ""
+repository: theoschiff/theo-archives
+email: theo.schifferli@biie.ai
+github_url: https://github.com/theoschiff
+icon: /assets/img/favicon/doodle-portrait-favicon.png
+portrait: /assets/img/portrait/TSchifferli_cropped.jpg
+cv_pdf: /assets/cv/TS_CV.pdf
+accent_color: "#88BDF2"
+copyright_year: 2026
+# CI supplies the actual push timestamp. Local previews show “local preview”.
+last_push_at: ""
+
+navigation:
+  - title: About
+    url: /
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: Code
+    url: /code/
+  - title: CV
+    url: /cv/
+  - title: Sidequests
+    url: /sidequests/
+
+# Keep al-folio's v1 contract; portfolio.liquid is a site-owned layout.
+theme: al_folio_core
+al_folio:
+  api_version: 1
+  style_engine: tailwind
+  tailwind:
+    version: 4.1.18
+    preflight: false
+    css_entry: assets/tailwind/app.css
+  distill:
+    engine: distillpub-template
+    source: al-org-dev/distill-template#al-folio
+    allow_remote_loader: false
+  features:
+    cv:
+      enabled: false
+    distill:
+      enabled: false
+  compat:
+    bootstrap:
+      enabled: false
+  upgrade:
+    channel: stable
+    auto_apply_safe_fixes: false
+
+# Keep this list and Gemfile in sync. No demo feature plugins are loaded.
+plugins:
+  - al_folio_core
+  - al_folio_upgrade
+  - jekyll-sitemap
+
+search_enabled: false
+enable_darkmode: false
+enable_math: false
+enable_cookie_consent: false
+enable_navbar_social: false
+enable_medium_zoom: false
+enable_progressbar: false
+back_to_top: false
+navbar_fixed: false
+footer_fixed: false
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+include:
+  - _pages
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: portfolio
+
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - README.md
+  - LICENSE
+  - docs
+  - test
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - playwright-report
+  - test-results
+  - al-folio-upgrade-report.md

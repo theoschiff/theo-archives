@@ -1,0 +1,75 @@
+- title: CAPO
+  subtitle: Compute-Aware Automated Protein-Model Optimization
+  context: BIIE · Master's thesis · January–July 2026
+  description: An agentic system for end-to-end protein-model optimization, evaluated through three protein-engineering tasks and ablation studies. The project explores how to make model optimization effective under compute constraints.
+  supervision: T. Bikias and M.-A. Hartley
+  recognition:
+    - text: Thesis grade 6/6
+      tone: grade
+      tone: grade
+    - text: Best Poster Award at OxML 2026 Health & Bio Track
+      tone: award
+    - text: and accepted to NeurIPS AgenticLS workshop
+      tone: acceptance
+  figures:
+    - src: /assets/img/capo/fig1_final.png
+      alt: CAPO system overview and workflow
+      caption: System overview
+      width: 3508
+      height: 1981
+    - src: /assets/img/capo/fig3_eff.png
+      alt: CAPO cost and GPU time comparison charts
+      caption: Compute efficiency
+      width: 3508
+      height: 1321
+  links:
+    - label: View poster
+      url: /assets/poster/CAPO_OxML_A0.pdf
+  tags: [Protein engineering, Agentic systems, Compute efficiency]
+- title: GraphRAG for immunology
+  context: BIIE · Research internship
+  description: Built a retrieval pipeline over an immunology corpus using an entity graph and Personalized PageRank, and benchmarked it against production RAG.
+  tags: [Retrieval, Knowledge graphs, Immunology]
+- title: Multimeditron
+  context: EPFL · LiGHT Lab · Master's project
+  description: Developed an 8B parameter modular multimodal medical language model trained from scratch, exploring mixture-of-experts and embedding-projection fusion.
+  figures:
+    - src: /assets/img/multimeditron/MultiMeditron_fusion.png
+      alt: Multimeditron comparison of expert fusion methods
+      caption: Fusion methods
+      width: 3861
+      height: 1798
+    - src: /assets/img/multimeditron/MultiMeditron.png
+      alt: Multimeditron architecture for medical images and text
+      caption: Model architecture
+      width: 2031
+      height: 1089
+  tags: [Multimodal models, Mixture of experts, Medical LLMs]
+- title: Eliciting Reasoning in LLMs using Logprob-based Rewards
+  context: EPFL · Master's project
+  description: Explored log-probability rewards with GRPO to elicit language-model reasoning across mathematics and poetry tasks.
+  links:
+    - label: View poster
+      url: /assets/poster/Poster_RL.pdf
+  tags: [LLM reasoning, Reinforcement learning]
+- title: "Small But Mighty: Achieving High Accuracy with Small Language Models on scientific MCQ answering"
+  context: EPFL · Modern NLP · Spring 2025
+  description: In this 10-week project, our group of three aimed to improve a small language model on scientific question answering using EPFL exam questions. We fine-tuned and quantized the model for single-GPU training, applied Direct Preference Optimization (DPO), and expanded its knowledge with Retrieval-Augmented Generation (RAG).
+  links:
+    - label: See project report
+      url: /assets/reports/Final_Report_MNLP.pdf
+  tags: [Small language models, Scientific QA, DPO, RAG]
+- title: Food recognition with multimodal LLMs
+  context: EPFL · Bachelor's thesis · Fall 2024
+  description: Investigated multimodal large language models for food recognition.
+  supervision: Prof. Marcel Salathé
+  recognition:
+    - text: Thesis grade 6/6
+      tone: grade
+      tone: grade
+  tags: [Multimodal models, Food recognition]
+- title: Germline mutation pathogenicity
+  context: MIT CSAIL · Regina Barzilay Group · August–September 2022
+  description: Fine-tuned sequence-only models to predict germline mutation pathogenicity across 70 ClinVar cancer genes, achieving an AUC of 0.875.
+  supervision: Jeremy Wohlwend
+  tags: [Genomics, Sequence models, Cancer]

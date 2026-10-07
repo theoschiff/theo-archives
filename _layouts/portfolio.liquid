@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% capture page_title %}{% if page.url != '/' %}{{ page.title }} · {% endif %}{{ site.title }}{% endcapture %}
+    <title>{{ page_title | strip | escape }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <meta name="theme-color" content="{{ site.accent_color }}">
+    {% if page.sitemap == false %}<meta name="robots" content="noindex">{% endif %}
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="icon" type="image/png" href="{{ site.icon | relative_url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page_title | strip | escape }}">
+    <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:site_name" content="{{ site.title | escape }}">
+    <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
+    <style>:root { --accent: {{ site.accent_color }}; }</style>
+  </head>
+  <body class="{% if page.sidequests %}is-sidequests{% endif %}">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Théo Schifferli, home">théo<span aria-hidden="true">.</span></a>
+        <nav aria-label="Main navigation">
+          {% for item in site.navigation %}
+            <a
+              href="{{ item.url | relative_url }}"
+              {% if page.url == item.url %}aria-current="page"{% endif %}
+              {% if item.url == '/sidequests/' %}class="sidequests-link"{% endif %}
+            >
+              {{ item.title }}{% if item.url == '/sidequests/' %}<span aria-hidden="true">↗</span>{% endif %}
+            </a>
+          {% endfor %}
+        </nav>
+      </header>
+      <main id="main" tabindex="-1">
+        {% unless page.url == '/' or page.sidequests %}
+          <header class="page-heading">
+            <h1>{{ page.title }}</h1>
+            {% if page.intro %}<p class="page-intro">{{ page.intro }}</p>{% endif %}
+          </header>
+        {% endunless %}
+        {{ content }}
+      </main>
+      <footer class="site-footer">
+        <span>© Copyright {{ site.copyright_year }} {{ site.title }}.</span>
+        <span>Last updated: {% if site.last_push_at != '' %}<time datetime="{{ site.last_push_at | date_to_xmlschema }}">{{ site.last_push_at | date: '%d %B %Y' }}</time>{% else %}local preview{% endif %}.</span>
+      </footer>
+    </div>
+  </body>
+</html>
