@@ -28,9 +28,11 @@ p { max-width: 760px; }
 .about-hero h1 { margin-bottom: 18px; font-size: clamp(58px, 7vw, 78px); }
 .hero-description { max-width: 540px; color: #425361; font-size: clamp(19px, 2.3vw, 25px); line-height: 1.45; letter-spacing: -.025em; }
 .about-hero .hero-description { margin-bottom: 0; }
-.portrait-note { width: 235px; align-self: center; }
+.portrait-note { position: relative; width: 235px; align-self: center; }
 .portrait-frame { aspect-ratio: 1995 / 2144; background: #e4e6e7; border-radius: 8px; overflow: hidden; }
 .portrait-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.portrait-doodle { position: absolute; left: -30px; bottom: -20px; width: 94px; height: 94px; padding: 4px; border: 1px solid #dce3e6; border-radius: 8px; background: #edf2f5; box-shadow: 0 6px 18px #20293618; }
+.portrait-doodle img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .about-copy { max-width: 800px; margin: 0 auto; color: #3f4e57; font-size: 17px; line-height: 1.85; }
 .about-copy p { max-width: none; margin-bottom: 18px; }
 .about-copy p, .off-duty p, .contact-box > p:not(.contact-label), .content-section p, .research-entry > p:not(.entry-meta, .entry-subtitle, .entry-people, .entry-recognition), .publication-entry > p:not(.entry-meta, .entry-recognition) { text-align: justify; text-justify: inter-word; hyphens: auto; }
@@ -130,6 +132,7 @@ p { max-width: 760px; }
   .about-hero { grid-template-columns: minmax(0, 1fr) 170px; gap: 24px; padding: 15px 0 40px; }
   .about-hero h1 { font-size: clamp(45px, 8.7vw, 65px); }
   .portrait-note { width: 170px; }
+  .portrait-doodle { left: -24px; bottom: -15px; width: 72px; height: 72px; }
   .hero-description { font-size: 19px; }
   .contact-box { margin: 45px auto 60px; padding: 22px; }
   .sidequests-intro { min-height: 330px; padding: 40px 26px 65px; box-shadow: 6px 6px 0 #203346; }
@@ -148,6 +151,7 @@ p { max-width: 760px; }
   .about-hero { grid-template-columns: minmax(0, 1fr) 108px; gap: 14px; }
   .about-hero h1 { font-size: clamp(36px, 9vw, 46px); }
   .portrait-note { width: 108px; }
+  .portrait-doodle { left: -14px; bottom: -10px; width: 54px; height: 54px; padding: 2px; }
   .about-copy { font-size: 16px; }
   .about-links { margin-bottom: 35px; }
   .publication-year-group { grid-template-columns: 1fr; gap: 14px; }
