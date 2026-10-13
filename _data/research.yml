@@ -9,7 +9,7 @@
       tone: grade
     - text: Best Poster Award at OxML 2026 Health & Bio Track
       tone: award
-    - text: and accepted to NeurIPS AgenticLS workshop
+    - text: and accepted to NeurIPS 2026 AgenticLS workshop
       tone: acceptance
   figures:
     - src: /assets/img/capo/fig1_final.png

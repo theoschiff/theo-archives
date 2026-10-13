@@ -10,11 +10,13 @@ description: Théo Schifferli — machine learning for biology and health. Resea
     <p class="hero-description">Machine Learning Scientist @ BIIE</p>
   </div>
   <div class="portrait-note">
-    <div class="portrait-frame">
-      <img src="{{ site.portrait | relative_url }}" width="1995" height="2144" alt="Portrait of Théo Schifferli" fetchpriority="high">
-    </div>
+    <button class="portrait-frame" type="button" aria-label="Show next portrait of Théo Schifferli" title="Show next portrait" data-photo-second="{{ '/assets/img/portrait/Theo_Talloires_Oct_26%20cropped.jpg' | relative_url }}" data-photo-third="{{ '/assets/img/portrait/Theo-583x582.jpg' | relative_url }}">
+      <img class="portrait-photo is-visible" src="{{ site.portrait | relative_url }}" width="1995" height="2144" alt="" aria-hidden="true" fetchpriority="high">
+      <img class="portrait-photo" width="1995" height="2144" alt="" aria-hidden="true">
+    </button>
   </div>
 </section>
+<script src="{{ '/assets/js/portrait-rotation.js' | relative_url }}" defer></script>
 
 <div class="about-copy" markdown="1">
 I’m a computer scientist working at the intersection of machine learning, biology and health. I did my Master’s in Data Science at EPFL (2024–2026), with a minor in Computational Biology, following a Bachelor’s in Computer Science there as well (2020–2024).

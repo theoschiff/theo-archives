@@ -27,7 +27,7 @@ description: Selected publications and research contributions by Théo Schifferl
         <p class="publication-affiliations"><sup>1</sup> <a href="https://www.epfl.ch/">EPFL</a> · <sup>2</sup> <a href="https://www.mit.edu/">MIT</a> · <sup>3</sup> <a href="https://www.benaroyaresearch.org/">Benaroya Research Institute</a> · <sup>4</sup> <a href="https://ethz.ch/">ETH Zurich</a></p>
       </div>
       <p>Compute-aware agentic protein-model optimization, developed during my master’s thesis at BIIE.</p>
-      <p class="entry-recognition" aria-label="Awards and acceptance"><em><strong class="recognition-award">Best Poster Award at OxML 2026 Health &amp; Bio Track </strong> <strong class="recognition-acceptance">and accepted to NeurIPS AgenticLS workshop</strong></em></p>
+      <p class="entry-recognition" aria-label="Awards and acceptance"><em><strong class="recognition-award">Best Poster Award at OxML 2026 Health &amp; Bio Track </strong> <strong class="recognition-acceptance">and accepted to NeurIPS 2026 AgenticLS workshop</strong></em></p>
       <div class="entry-links"><a href="{{ '/assets/poster/CAPO_OxML_A0.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">View poster <span aria-hidden="true">↗</span></a></div>
     </article>
     </div>

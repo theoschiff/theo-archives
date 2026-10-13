@@ -29,8 +29,11 @@ p { max-width: 760px; }
 .hero-description { max-width: 540px; color: #425361; font-size: clamp(19px, 2.3vw, 25px); line-height: 1.45; letter-spacing: -.025em; }
 .about-hero .hero-description { margin-bottom: 0; }
 .portrait-note { position: relative; width: 235px; align-self: center; }
-.portrait-frame { aspect-ratio: 1995 / 2144; background: #e4e6e7; border-radius: 8px; overflow: hidden; }
-.portrait-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.portrait-frame { position: relative; display: block; width: 100%; aspect-ratio: 1995 / 2144; padding: 0; border: 0; border-radius: 8px; overflow: hidden; background: #e4e6e7; cursor: pointer; }
+.portrait-frame:focus-visible { outline: 3px solid #458dc8; outline-offset: 4px; }
+.portrait-frame img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 200ms ease-in-out; }
+.portrait-frame img.is-visible { opacity: 1; }
+.portrait-frame:hover img.is-visible { filter: brightness(.98); }
 .portrait-doodle { position: absolute; left: -30px; bottom: -20px; width: 94px; height: 94px; padding: 4px; border: 1px solid #dce3e6; border-radius: 8px; background: #edf2f5; box-shadow: 0 6px 18px #20293618; }
 .portrait-doodle img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .about-copy { max-width: 800px; margin: 0 auto; color: #3f4e57; font-size: 17px; line-height: 1.85; }
@@ -159,4 +162,7 @@ p { max-width: 760px; }
   .cv-actions { width: 100%; }
   .cv-viewer object { min-height: 460px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .portrait-frame img { transition: none; }
+}
