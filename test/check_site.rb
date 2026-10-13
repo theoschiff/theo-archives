@@ -40,7 +40,7 @@ routes.each do |route, path|
 end
 
 about = routes.fetch('/').read
-raise 'Contact link missing' unless about.include?('mailto:theo.schifferli@biie.ai')
+raise 'Contact link missing' unless about.include?('mailto:theo.schifferli@immune.engineering')
 raise 'LinkedIn link missing' unless about.include?('https://www.linkedin.com/in/theoschiff/')
 raise 'Portrait missing' unless about.include?('/assets/img/portrait/TSchifferli_cropped.jpg')
 raise 'Old portrait caption remains' if about.include?("hi, I'm Théo")

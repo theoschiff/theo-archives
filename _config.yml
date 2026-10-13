@@ -9,7 +9,7 @@ url: https://theoschifferli.ch
 # A custom domain serves this project at the root, without /theo-archives.
 baseurl: ""
 repository: theoschiff/theo-archives
-email: theo.schifferli@biie.ai
+email: theo.schifferli@immune.engineering
 github_url: https://github.com/theoschiff
 icon: /assets/img/favicon/doodle-portrait-favicon.png
 portrait: /assets/img/portrait/TSchifferli_cropped.jpg
