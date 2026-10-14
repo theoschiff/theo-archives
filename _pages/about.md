@@ -46,7 +46,7 @@ I like tackling complex problems, especially where computation meets biology.
 <section class="off-duty" markdown="1">
 ### Offline.
 
-I co-founded and lead Not-So-Fast Run Club, an inclusive running association in Geneva with 1,000+ members on Strava.
+I co-founded and lead Not-So-Fast Run Club, an inclusive running association in Geneva with 1,100+ members on Strava.
 Off-screen: I like running, cycling, training for long-distance triathlons, cooking, making music, and being in the mountains or by the sea. <br/>
 The rest lives in [Sidequests]({{ '/sidequests/' | relative_url }}).
 
