@@ -19,7 +19,7 @@ description: Théo Schifferli — machine learning for biology and health. Resea
 <script src="{{ '/assets/js/portrait-rotation.js' | relative_url }}" defer></script>
 
 <div class="about-copy" markdown="1">
-I’m a computer scientist working at the intersection of machine learning, biology and health. I did my Master’s in Data Science at EPFL (2024–2026), with a minor in Computational Biology, following a Bachelor’s in Computer Science there as well (2020–2024).
+I’m a machine learning researcher developing on methods and systems for biology and medicine. I did my Master’s in Data Science at EPFL (2024–2026), with a minor in Computational Biology, following a Bachelor’s in Computer Science there as well (2020–2024).
 
 Most recently, I worked on CAPO, a compute-aware agentic system for protein-model optimization, at the Botnar Institute of Immune Engineering’s AI initiative. The work received the Best Poster Award at the OxML 2026 Health &amp; Bio Track and was accepted at the NeurIPS 2026 AgenticLS workshop.
 
